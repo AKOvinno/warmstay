@@ -1,0 +1,111 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Create a New Listing</h3>
+    <form
+      method="POST"
+      action="/listings"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          name="listing[title]"
+          placeholder="Add a catchy title"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title looks catchy</div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          placeholder="Enter Description"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter a short description</div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input
+          name="listing[image]"
+          type="file"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">You have to upload an image</div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Category</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01"
+              >Options</label
+            >
+          </div>
+          <select
+            class="custom-select form-control"
+            id="inputGroupSelect01"
+            name="listing[category]"
+            required
+          >
+            <option value="" selected disabled>Choose</option>
+            <option value="mountains">mountains</option>
+            <option value="arctic">arctic</option>
+            <option value="farms">farms</option>
+            <option value="rooms">rooms</option>
+            <option value="iconic cities">iconic cities</option>
+            <option value="castles">castles</option>
+            <option value="pools">pools</option>
+            <option value="camping">camping</option>
+            <option value="ancient">ancient</option>
+            <option value="igloo">igloo</option>
+            <option value="others">others</option>
+          </select>
+          <div class="invalid-feedback">select at least one option</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="price" class="form-label">Price (Dollar)</label>
+          <input
+            name="listing[price]"
+            placeholder="1200"
+            class="form-control"
+            type="number"
+            required
+          />
+          <div class="invalid-feedback">Price should be valid</div>
+        </div>
+        <div class="mb-3 col-md-6">
+          <label for="country" class="form-label">Country</label>
+          <input
+            name="listing[country]"
+            placeholder="Bangladesh"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Country name should be valid</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          name="listing[location]"
+          placeholder="19/A, Kalibari Road, Mymensingh"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Location should be valid</div>
+      </div>
+      <button class="btn btn-primary add-btn mt-2 mb-3">Add</button>
+    </form>
+  </div>
+</div>

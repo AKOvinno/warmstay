@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+  <h1 class="col-6 offset-3">SignUp on WarmStay</h1>
+  <br />
+  <br />
+  <br />
+  <div class="col-6 offset-3">
+    <form action="/signup" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          name="username"
+          id="username"
+          placeholder="Enter Username"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Looks Fine!</div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          name="email"
+          id="email"
+          placeholder="Enter Email"
+          type="email"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Email is okay!</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          name="password"
+          id="password"
+          placeholder="Enter Password"
+          type="password"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Password looks good!</div>
+      </div>
+      <button class="btn btn-success">SignUp</button>
+    </form>
+  </div>
+</div>
