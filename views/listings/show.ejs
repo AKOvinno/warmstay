@@ -117,12 +117,8 @@
   <p class="card-text"><%= listing.location %>, <%= listing.country %></p>
   <div id="my-map"></div>
   <script>
-    window.listingMapData = {
-      latitude: "<%= listing.geometry.coordinates[1] %>",
-      longitude: "<%= listing.geometry.coordinates[0] %>",
-      apiKey: "<%= process.env.MAP_TOKEN %>",
-      title: "<%= listing.title %>",
-    };
+    const coordinates = "<%- JSON.stringify(listing.geometry.coordinates) %>";
+    const title = "<%= listing.title %>";
   </script>
 </div>
 <script src="/js/map.js"></script>
